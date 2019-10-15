@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block body %}
+{% include "navbar.html" %}
+<section class="hero is-primary is-bold is-large" style="background-color: transparent">
+  <script src="https://js.stripe.com/v3/"></script>
+  <form action="/charge" method="post" style="margin: 0 auto; color: black">
+    <article>
+      <label>
+        <span>Amount is $5.00</span>
+      </label>
+    </article>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_TYooMQauvdEDq54NiTphI7jx"
+          data-description="Soccer predciton Charge"
+          data-amount="500"
+          data-email="ko@gg.com"
+          data-locale="auto"></script>
+
+  </form>
+
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="../static/js/scripts.js"></script>
+{% endblock %}
